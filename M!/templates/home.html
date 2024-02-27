@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pricing Table</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='home_style.css') }}">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<!-- Background Image Effect -->
+<div class="bg-img">
+
+<img src="{{ url_for('static',filename='logo.png') }}" style="position: absolute;top: 40%;left:10%;"}>
+<!-- Heading -->
+      <font size="6" color="black" style="position: absolute;top: 80%;left:2%;"}><b>Online E-Commerce Website Product Comparission &</b></font>
+     <font size="6" color="black" style="position: absolute;top: 85%;left:12%;"}><b>Sentimental Analyses on Review</b></font>
+</h1>
+</div>
+<!-- Search ox -->
+    <div class="box" style="position: absolute;top: 70%;    left: 30%;">
+        <form action="/search_product" class="search-form" role="form" method="post">
+            <input type="text" name="names" id="search" placeholder="Search Product...">
+            <input type="submit" name="searching" value="Search">
+        </form>
+
+        <div class="container" style="margin-left: 50px; margin-top: 10px;">
+          {% for message in get_flashed_messages() %}
+          <div class="alert alert-warning">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              {{ message }}
+          </div>
+          {% endfor %}
+      
+          {% block page_content %}{% endblock %}
+      </div>
+    
+
+        <style>
+
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 0.6em;
+  color: red;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+  .btn:hover, .btn:focus {
+  color: #fff;
+  outline: 0;
+  }
+
+  .fourth {
+  border-color: #250cc9;
+  color: rgb(205, 52, 52);
+  background-image: -webkit-linear-gradient(45deg, #abe681 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #abe681 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.fourth:hover {
+  background-position: 0;
+}
+
+
+        </style>
+    
+    <a href="/sentimental" class="btn fourth" style="margin-left: 80px; width: 300px;">Sentimental Analyzer</a>
+    
+  
+<!-- partial -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.26/jquery.autocomplete.min.js"></script>
+
+  <!-- <script>
+  $("#search").autocomplete({
+      serviceUrl: '/search/names',
+      dataType: 'json',
+      onSearchComplete: function (query, suggestions) {
+        console.log(query);
+      }
+  });
+  </script> -->
+
+  <script type="text/javascript">
+            
+        $(document).ready(function(){
+
+          const imgOne = 'static/cover1.jpg';
+          const imgTwo = 'static/cover2.jpg';
+          const imgThree = 'static/cover3.jpg';
+
+          const imgArray = [imgOne, imgTwo, imgThree];
+          
+          $('.bg-img').css('background-image', 'url(' + imgArray[0] + ')');
+          
+          let interval = 0;
+          
+          setInterval(function(){
+            
+            if (interval < (imgArray.length - 1)) {
+              interval++;
+            } else {
+              interval = 0;
+            }
+            
+            $('.bg-img').css('background-image', 'url(' + imgArray[interval] + ')');
+          
+          }, 4000);
+          
+        });
+  </script>
+
+</body>
+</html>

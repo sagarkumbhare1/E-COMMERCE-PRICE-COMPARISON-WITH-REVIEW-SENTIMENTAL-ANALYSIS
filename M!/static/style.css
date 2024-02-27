@@ -1,0 +1,194 @@
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: #70daa8;*/
+    background: rgba(154,57,163,1);
+    background: -moz-linear-gradient(-45deg, rgba(154,57,163,1) 0%, rgba(65,103,168,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(154,57,163,1)), color-stop(100%, rgba(65,103,168,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(154,57,163,1) 0%, rgba(65,103,168,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(154,57,163,1) 0%, rgba(65,103,168,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(154,57,163,1) 0%, rgba(65,103,168,1) 100%);
+    background: linear-gradient(135deg, rgba(154,57,163,1) 0%, rgba(65,103,168,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a39a3', endColorstr='#4167a8', GradientType=1 );
+}
+
+
+/*Go Back Button*/
+.close{
+    border-radius:8px 8px 8px 8px;
+    position: absolute;
+    top: 15%;
+    left: 46%;
+    width: 150px;
+    height: 50px;
+    outline: none;
+    cursor: pointer;background: #ffc107;
+    color: #fff;
+}
+
+.close:hover
+{
+    background: white;
+    color: #ffc107;
+}
+
+
+
+
+/* Car 1 Flipkart*/
+.column{
+    width: 25%;
+    float: left;
+    padding: 0px 10px;
+}
+
+.row::::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and(max-width: 2000px;)
+{
+    .column{
+        width: 80%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.card1
+{
+box-shadow: 0 8px 8px 0 rgba(0,0,0,0,2);
+width: 350px;
+box-sizing: border-box;
+padding: 5px;
+position: absolute;
+top: 35%;
+left: 10%;
+margin: auto;
+background-color:whitesmoke;
+text-align: center;
+border-radius: 40px;
+padding-bottom: 25px;
+background-image: url(card_background.jpg);
+}
+.card1:hover
+{
+    background-image: url(card_background1.jpg);
+}
+
+
+
+
+
+/*Card 2 Amazon*/
+.column{
+    width: 25%;
+    float: left;
+    padding: 0px 10px;
+}
+
+.row::::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and(max-width: 2000px;)
+{
+    .column{
+        width: 80%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+.card2
+{
+box-shadow: 0 8px 8px 0 rgba(0,0,0,0,2);
+width: 350px;
+box-sizing: border-box;
+padding: 5px;
+position: absolute;
+top: 35%;
+left: 39.5%;
+margin: auto;
+background-color:whitesmoke;
+text-align: center;
+border-radius: 40px;
+padding-bottom: 25px;
+background-image: url(card_background.jpg);
+
+}
+.card2:hover
+{
+    background-image: url(card_background1.jpg);
+}
+
+
+
+
+
+/*Card 3 Snapdeal*/
+.column{
+    width: 25%;
+    float: left;
+    padding: 0px 10px;
+}
+
+.row::::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and(max-width: 600px;)
+{
+    .column{
+        width: 80%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+
+.card3
+{
+box-shadow: 0 8px 8px 0 rgba(0,0,0,0,2);
+width: 350px;
+box-sizing: border-box;
+padding: 5px;
+position: absolute;
+top: 35%;
+left: 70%;
+margin: auto;
+background-color:whitesmoke;
+text-align: center;
+border-radius: 40px;
+padding-bottom: 25px;
+background-image: url(card_background.jpg);
+
+}
+
+.card3:hover
+{
+    background-image: url(card_background1.jpg);
+}
+
+
+
+/*Preview Button*/
+.button5{
+    border-radius:8px 8px 8px 8px;
+    width: 100px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;background: #ffc107;
+    color: black;
+}
+
+.button5:hover
+{
+    background: white;
+    color: black;
+}

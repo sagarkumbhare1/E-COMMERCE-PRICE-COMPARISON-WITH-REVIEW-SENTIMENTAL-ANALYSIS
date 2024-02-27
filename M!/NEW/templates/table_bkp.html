@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pricing Table</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='table_style.css') }}">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- Heading -->
+    <h1><p><center><font color="white" >Online E-Commerce Website Product Comparission & <br>"Sentimental Analysis on Review"</font></center></h1></p>
+
+
+<!-- Close Button -->
+<form action="/go_back" role="form" method="post">
+    <input class="close" type="submit" name="go_back" value="Go Back">
+</form>
+
+
+<!-- Flipkart Card -->
+    <div class="row">
+        <div class="column">
+            <div class="card1">
+                <img src="{{ url_for('static',filename='flipkart.png') }}" style="width: 100px;height: auto;padding-top: 10px">
+                <h2>{{product_name}}</h2>
+                <img src={{flipkart_product_image}} style="width: 100px ; height:100px;padding-top:10px">
+                <h3>Price : {{flipkart_product_price}}</h3>
+                <h3>Stars : {{flipkart_product_rating}}</h3>
+                <h3>Analyze Reviews NLP Result :- <br><b>{{flipkart_result}}</b></h3>
+                <a href={{flipkart_url}} class="button button5">View Product</a>
+<!--                <button class="button button5" onclick='location.href={{flipkart_url}};'>View Product</button>-->
+        </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Amazon Card -->
+    <div class="row">
+        <div class="column">
+            <div class="card2">
+                <img src="{{ url_for('static',filename='amazon.png') }}" style="width: 100px;height: auto;padding-top: 10px"  >
+                <h2>{{product_name}}</h2>
+                <img src={{amazon_product_image}} style="width: 100px;height: 100px;padding-top:10px">
+                <h3>Price : {{amazon_product_price}}</h3>
+                <h3>Stars : {{amazon_product_rating}}</h3>
+                <h3>Analyzed Reviews NLP Result :- <br><b>{{amazon_result}}</b></h3>
+                <a href={{amazon_url}} class="button button5">View Product</a>
+<!--                <button class="button button5" onclick='location.href={{amazon_url}};'>View Product</button>-->
+        </div>
+    </div>
+
+
+<!-- SnapDeal Card -->
+    <div class="row">
+        <div class="column">
+            <div class="card3">
+                <img src="{{ url_for('static',filename='snapdeal.png') }}"style="width: 100px;height: auto;padding-top: 10px">
+
+                <h2>{{product_name}}</h2>
+                <img src={{snapdeal_product_image}} style="width: 100px;height: 100px;padding-top:10px">
+                <h3>Price : {{snapdeal_product_price}}</h3>
+                <h3>Stars : {{snapdeal_product_rating}}</h3>
+                <h3>Analyzed Reviews NLP Result :- <br><b>{{snapdeal_result}}</b></h3>
+                <a href={{snapdeal_url}} class="button button5">View Product</a>
+<!--               <button class="button button5" onclick='location.href="{{snapdeal_url}}";'>View Product</button>-->
+        </div>
+    </div>
+    </div>
+    </div>
+
+<!-- partial -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.26/jquery.autocomplete.min.js"></script>
+
+  <script>
+  $("#search").autocomplete({
+      serviceUrl: '/search/names',
+      dataType: 'json',
+      onSearchComplete: function (query, suggestions) {
+        console.log(query);
+      }
+  });
+  </script>
+
+
+</body>
+</html>
